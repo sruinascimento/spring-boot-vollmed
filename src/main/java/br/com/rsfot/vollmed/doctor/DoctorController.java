@@ -2,14 +2,11 @@ package br.com.rsfot.vollmed.doctor;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 public class DoctorController {
@@ -29,7 +26,7 @@ public class DoctorController {
 
     @GetMapping("/doctors")
     public Page<DoctorResponse> list(@PageableDefault(sort = {"name"}) Pageable pageable) {
-        return doctorRepository.findAll(pageable)
+        return doctorRepository.findAllByActiveTrue(pageable)
                 .map(DoctorResponse::new);
     }
 
@@ -41,6 +38,14 @@ public class DoctorController {
 
         doctorRepository.save(doctor);
 
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/doctors/{id}")
+    @Transactional
+    public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
+        Doctor doctor = doctorRepository.findById(id).orElseThrow(() -> new RuntimeException("Doctor not found by id: " + id));
+        doctor.inactivate();
         return ResponseEntity.ok().build();
     }
 }

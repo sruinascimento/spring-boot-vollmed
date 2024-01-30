@@ -25,6 +25,8 @@ public class Doctor {
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "address_id")
     private Address address;
+    @Column(nullable = false)
+    private boolean active = true;
 
     @Deprecated
     public Doctor() {
@@ -77,5 +79,12 @@ public class Doctor {
 
     public Address getAddress() {
         return address;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+    public void inactivate() {
+        this.active = false;
     }
 }

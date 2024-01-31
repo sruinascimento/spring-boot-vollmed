@@ -5,7 +5,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 
 public record NewDoctorRequest(
-        @NotBlank
+        @NotBlank(message = "{name.not.blank}")
         String name,
         @Email
         String email,

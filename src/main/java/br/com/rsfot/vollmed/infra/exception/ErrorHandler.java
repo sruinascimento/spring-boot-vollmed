@@ -1,4 +1,4 @@
-package br.com.rsfot.vollmed.infra;
+package br.com.rsfot.vollmed.infra.exception;
 
 import br.com.rsfot.vollmed.doctor.DoctorNotFoundException;
 import org.springframework.http.ResponseEntity;

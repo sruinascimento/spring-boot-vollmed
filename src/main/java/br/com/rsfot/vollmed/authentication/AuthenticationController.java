@@ -3,11 +3,14 @@ package br.com.rsfot.vollmed.authentication;
 import br.com.rsfot.vollmed.infra.security.TokenService;
 import br.com.rsfot.vollmed.user.User;
 import jakarta.validation.Valid;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 public class AuthenticationController {
@@ -19,11 +22,11 @@ public class AuthenticationController {
         this.tokenService = tokenService;
     }
 
-    @PostMapping("/login")
-    ResponseEntity<String> singIn(@Valid @RequestBody AuthenticationRequest authenticationRequest) {
+    @PostMapping(value = "/login", produces = {APPLICATION_JSON_VALUE})
+    ResponseEntity<TokenJWTResponse> singIn(@Valid @RequestBody AuthenticationRequest authenticationRequest) {
         var credentials = new UsernamePasswordAuthenticationToken(authenticationRequest.login(), authenticationRequest.password());
         Authentication authentication = authenticationManager.authenticate(credentials);
         String token = tokenService.generateToken((User) authentication.getPrincipal());
-        return ResponseEntity.ok("{\"token\": %s}".formatted(token));
+        return ResponseEntity.ok(new TokenJWTResponse(token));
     }
 }

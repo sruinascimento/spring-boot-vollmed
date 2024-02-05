@@ -1,5 +1,6 @@
 package br.com.rsfot.vollmed.doctor;
 
+import br.com.rsfot.vollmed.infra.personalizade.exception.DoctorNotFoundException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;

@@ -17,6 +17,6 @@ public record UpdateDoctorRequest(
             doctor.setPhone(phone);
 
         if (newAddressRequest != null)
-            newAddressRequest.updateAddressFrom(doctor);
+            newAddressRequest.updateAddress(doctor.getAddress());
     }
 }

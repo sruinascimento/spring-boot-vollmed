@@ -4,6 +4,10 @@ import br.com.rsfot.vollmed.doctor.Doctor;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
+import java.util.Objects;
+
+import static java.util.Objects.nonNull;
+
 public record NewAddressRequest(
         @NotBlank
         String street,
@@ -22,26 +26,26 @@ public record NewAddressRequest(
        return new Address(street, number, neighborhood, city, state, zipCode);
     }
 
-    public void updateAddressFrom(Doctor doctor) {
-        if (street != null)
-            doctor.getAddress().setStreet(street);
+    public void updateAddress(Address address) {
+        if (nonNull(street))
+            address.setStreet(street);
 
-        if (neighborhood != null)
-            doctor.getAddress().setNeighborhood(neighborhood);
+        if (nonNull(neighborhood))
+            address.setNeighborhood(neighborhood);
 
-        if (city != null)
-            doctor.getAddress().setCity(city);
+        if (nonNull(city))
+            address.setCity(city);
 
-        if (number != null)
-            doctor.getAddress().setNumber(number);
+        if (nonNull(number))
+            address.setNumber(number);
 
-        if (complement != null)
-            doctor.getAddress().setComplement(complement);
+        if (nonNull(complement))
+            address.setComplement(complement);
 
-        if (state != null)
-            doctor.getAddress().setState(state);
+        if (nonNull(state))
+            address.setState(state);
 
-        if (zipCode != null)
-            doctor.getAddress().setZipCode(zipCode);
+        if (nonNull(zipCode))
+            address.setZipCode(zipCode);
     }
 }

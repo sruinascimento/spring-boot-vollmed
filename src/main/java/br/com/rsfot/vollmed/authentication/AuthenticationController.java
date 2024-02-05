@@ -3,7 +3,6 @@ package br.com.rsfot.vollmed.authentication;
 import br.com.rsfot.vollmed.infra.security.TokenService;
 import br.com.rsfot.vollmed.user.User;
 import jakarta.validation.Valid;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

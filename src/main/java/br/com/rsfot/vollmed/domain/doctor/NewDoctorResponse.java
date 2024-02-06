@@ -1,6 +1,6 @@
-package br.com.rsfot.vollmed.doctor;
+package br.com.rsfot.vollmed.domain.doctor;
 
-import br.com.rsfot.vollmed.adress.NewAddressResponse;
+import br.com.rsfot.vollmed.domain.adress.NewAddressResponse;
 
 public record NewDoctorResponse(
         String name,

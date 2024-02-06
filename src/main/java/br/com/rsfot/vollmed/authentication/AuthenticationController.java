@@ -1,7 +1,7 @@
 package br.com.rsfot.vollmed.authentication;
 
 import br.com.rsfot.vollmed.infra.security.TokenService;
-import br.com.rsfot.vollmed.user.User;
+import br.com.rsfot.vollmed.domain.user.User;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

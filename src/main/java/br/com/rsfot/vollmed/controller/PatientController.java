@@ -1,6 +1,7 @@
-package br.com.rsfot.vollmed.patient;
+package br.com.rsfot.vollmed.controller;
 
-import br.com.rsfot.vollmed.infra.personalizade.exception.PatientNotFoundException;
+import br.com.rsfot.vollmed.domain.patient.*;
+import br.com.rsfot.vollmed.infra.personalized.exception.PatientNotFoundException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
@@ -35,14 +36,23 @@ public class PatientController {
 
     @GetMapping("/patients")
     public ResponseEntity<Page<PatientResponse>> list(@PageableDefault(sort = {"name"}) Pageable pageable) {
-        return ResponseEntity.ok(patientRepository.findAll(pageable).map(PatientResponse::new));
+        return ResponseEntity.ok(patientRepository.findAllByActiveTrue(pageable).map(PatientResponse::new));
     }
 
     @PutMapping("/patient/{id}")
     @Transactional
-    public ResponseEntity<PatientCompleteDetails> update(@PathVariable("id") Long id,  @Valid @RequestBody UpdatePatientRequest updatePatientRequest) {
+    public ResponseEntity<PatientCompleteDetails> update(@PathVariable("id") Long id, @Valid @RequestBody UpdatePatientRequest updatePatientRequest) {
         Patient patient = patientRepository.findById(id).orElseThrow(() -> new PatientNotFoundException(id));
         updatePatientRequest.updatePatient(patient);
         return ResponseEntity.ok(new PatientCompleteDetails(patient));
     }
+
+    @DeleteMapping("/patient/{id}")
+    @Transactional
+    public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
+        Patient patient = patientRepository.findById(id).orElseThrow(() -> new PatientNotFoundException(id));
+        patient.inactivate();
+        return ResponseEntity.noContent().build();
+    }
+
 }

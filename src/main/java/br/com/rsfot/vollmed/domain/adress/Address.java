@@ -1,4 +1,4 @@
-package br.com.rsfot.vollmed.adress;
+package br.com.rsfot.vollmed.domain.adress;
 
 import jakarta.persistence.*;
 

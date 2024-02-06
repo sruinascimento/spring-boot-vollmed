@@ -1,6 +1,6 @@
-package br.com.rsfot.vollmed.doctor;
+package br.com.rsfot.vollmed.domain.doctor;
 
-import br.com.rsfot.vollmed.adress.AddressCompleteDetails;
+import br.com.rsfot.vollmed.domain.adress.AddressCompleteDetails;
 
 public record DoctorCompleteDetails(
         Long id,

@@ -1,4 +1,4 @@
-package br.com.rsfot.vollmed.user;
+package br.com.rsfot.vollmed.domain.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;

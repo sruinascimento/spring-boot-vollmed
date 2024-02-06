@@ -1,6 +1,6 @@
 package br.com.rsfot.vollmed.authentication;
 
-import br.com.rsfot.vollmed.user.UserRepository;
+import br.com.rsfot.vollmed.domain.user.UserRepository;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 

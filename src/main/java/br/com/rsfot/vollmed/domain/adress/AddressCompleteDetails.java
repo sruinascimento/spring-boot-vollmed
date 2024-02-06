@@ -1,6 +1,7 @@
-package br.com.rsfot.vollmed.adress;
+package br.com.rsfot.vollmed.domain.adress;
 
-public record NewAddressResponse(
+public record AddressCompleteDetails(
+        Long id,
         String street,
         String neighborhood,
         String city,
@@ -9,8 +10,9 @@ public record NewAddressResponse(
         String state,
         String zipCode) {
 
-    public NewAddressResponse(Address address) {
-        this(address.getStreet(),
+    public AddressCompleteDetails(Address address) {
+        this(address.getId(),
+                address.getStreet(),
                 address.getNeighborhood(),
                 address.getCity(),
                 address.getNumber(),

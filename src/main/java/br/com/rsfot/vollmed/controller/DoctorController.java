@@ -1,6 +1,7 @@
-package br.com.rsfot.vollmed.doctor;
+package br.com.rsfot.vollmed.controller;
 
-import br.com.rsfot.vollmed.infra.personalizade.exception.DoctorNotFoundException;
+import br.com.rsfot.vollmed.domain.doctor.*;
+import br.com.rsfot.vollmed.infra.personalized.exception.DoctorNotFoundException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;

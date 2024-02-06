@@ -1,4 +1,4 @@
-package br.com.rsfot.vollmed.doctor;
+package br.com.rsfot.vollmed.domain.doctor;
 
 public enum Especialty{
     ORTHOPEDIST,

@@ -1,7 +1,7 @@
 package br.com.rsfot.vollmed.infra.exception;
 
-import br.com.rsfot.vollmed.infra.personalizade.exception.DoctorNotFoundException;
-import br.com.rsfot.vollmed.infra.personalizade.exception.PatientNotFoundException;
+import br.com.rsfot.vollmed.infra.personalized.exception.DoctorNotFoundException;
+import br.com.rsfot.vollmed.infra.personalized.exception.PatientNotFoundException;
 import org.springframework.http.*;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;

@@ -1,4 +1,4 @@
-package br.com.rsfot.vollmed.doctor;
+package br.com.rsfot.vollmed.domain.doctor;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

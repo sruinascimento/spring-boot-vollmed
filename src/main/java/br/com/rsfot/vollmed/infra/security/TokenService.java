@@ -1,6 +1,6 @@
 package br.com.rsfot.vollmed.infra.security;
 
-import br.com.rsfot.vollmed.user.User;
+import br.com.rsfot.vollmed.domain.user.User;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;

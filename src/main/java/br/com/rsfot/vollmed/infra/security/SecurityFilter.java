@@ -1,6 +1,6 @@
 package br.com.rsfot.vollmed.infra.security;
 
-import br.com.rsfot.vollmed.user.UserRepository;
+import br.com.rsfot.vollmed.domain.user.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

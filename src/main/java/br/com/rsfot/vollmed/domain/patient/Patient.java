@@ -1,6 +1,6 @@
-package br.com.rsfot.vollmed.patient;
+package br.com.rsfot.vollmed.domain.patient;
 
-import br.com.rsfot.vollmed.adress.Address;
+import br.com.rsfot.vollmed.domain.adress.Address;
 import jakarta.persistence.*;
 
 import static jakarta.persistence.CascadeType.MERGE;

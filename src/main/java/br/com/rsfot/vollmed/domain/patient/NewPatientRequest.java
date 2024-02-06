@@ -1,7 +1,6 @@
-package br.com.rsfot.vollmed.patient;
+package br.com.rsfot.vollmed.domain.patient;
 
-import br.com.rsfot.vollmed.adress.Address;
-import br.com.rsfot.vollmed.adress.NewAddressRequest;
+import br.com.rsfot.vollmed.domain.adress.NewAddressRequest;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 

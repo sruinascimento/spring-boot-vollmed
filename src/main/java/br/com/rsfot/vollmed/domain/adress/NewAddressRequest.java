@@ -1,10 +1,7 @@
-package br.com.rsfot.vollmed.adress;
+package br.com.rsfot.vollmed.domain.adress;
 
-import br.com.rsfot.vollmed.doctor.Doctor;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
-
-import java.util.Objects;
 
 import static java.util.Objects.nonNull;
 

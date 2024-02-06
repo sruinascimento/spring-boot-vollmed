@@ -1,4 +1,4 @@
-package br.com.rsfot.vollmed.infra.personalizade.exception;
+package br.com.rsfot.vollmed.infra.personalized.exception;
 
 public class DoctorNotFoundException extends RuntimeException{
     public DoctorNotFoundException(Long id) {

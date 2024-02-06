@@ -1,4 +1,4 @@
-package br.com.rsfot.vollmed.doctor;
+package br.com.rsfot.vollmed.domain.doctor;
 
 public record DoctorResponse(String name, String email, String crm, Especialty especialty) {
     public DoctorResponse(Doctor doctor) {

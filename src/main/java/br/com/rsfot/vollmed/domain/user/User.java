@@ -1,4 +1,4 @@
-package br.com.rsfot.vollmed.user;
+package br.com.rsfot.vollmed.domain.user;
 
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;

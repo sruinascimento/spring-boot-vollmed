@@ -20,17 +20,18 @@ public class Appointment {
     @ManyToOne
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
-    private LocalDateTime date;
+    @Column(name = "date_appointment")
+    private LocalDateTime dateAppointment;
 
     @Deprecated
     public Appointment() {
 
     }
 
-    public Appointment(Patient patient, Doctor doctor, LocalDateTime date) {
+    public Appointment(Patient patient, Doctor doctor, LocalDateTime dateAppointment) {
         this.patient = patient;
         this.doctor = doctor;
-        this.date = date;
+        this.dateAppointment = dateAppointment;
     }
 
     public Long getId() {
@@ -45,7 +46,7 @@ public class Appointment {
         return doctor;
     }
 
-    public LocalDateTime getDate() {
-        return date;
+    public LocalDateTime getDateAppointment() {
+        return dateAppointment;
     }
 }

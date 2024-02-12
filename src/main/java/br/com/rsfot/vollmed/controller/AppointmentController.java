@@ -25,7 +25,7 @@ public class AppointmentController {
     }
 
     @PostMapping("/appointments")
-    public ResponseEntity<?> create(@Valid @RequestBody NewAppointmentRequest newAppointment) {
+    public ResponseEntity<AppointmentCompleteDetails> create(@Valid @RequestBody NewAppointmentRequest newAppointment) {
         Doctor doctor = doctorRepository.findById(newAppointment.doctorId())
                 .orElseThrow(() -> new DoctorNotFoundException(newAppointment.doctorId()));
 
@@ -35,6 +35,6 @@ public class AppointmentController {
         Appointment appointment = new Appointment(patient, doctor, newAppointment.date());
         appointmentRepository.save(appointment);
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(new AppointmentCompleteDetails(appointment));
     }
 }
